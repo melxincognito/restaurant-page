@@ -1,18 +1,41 @@
 
-@font-face {
-    font-family: 'Lobster';
-    src: url('./Lobster-Regular.ttf') format('ttf');
-  
-  }
-  
+body {
+      background-color: rgba(216, 112, 147, 0.932)
+}
 
 
-.content {
-    
+.headContainer {
     color: purple;
-    font-family: Lobster;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: grid;
-    justify-content: center;
     align-content: center;
-    background: url('./icon.png');
+    justify-content: center;
+    font-weight: 900;
+    font-size: large;
+    margin: 20px;
+    padding: 40px;
+    background-color: rgba(255, 192, 203, 0.521);
+}
+
+.navContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 10px;
+    gap: 5px;
+
+}
+
+button {
+    background-color: rgba(168, 54, 149, 0.425);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    border: solid rgba(255, 255, 255, 0.637);
+    padding: 20px;
+    border-radius: 25px;
+
+}
+
+.menuContainer {
+    color:rgba(255, 192, 203, 0.521)
 }
