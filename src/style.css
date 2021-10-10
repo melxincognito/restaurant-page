@@ -1,0 +1,18 @@
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('./Lobster-Regular.ttf') format('ttf');
+  
+  }
+  
+
+
+.content {
+    
+    color: purple;
+    font-family: Lobster;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: url('./icon.png');
+}
