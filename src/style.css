@@ -11,10 +11,17 @@ body {
     align-content: center;
     justify-content: center;
     font-weight: 900;
-    font-size: large;
+    font-size: xx-large;
     margin: 20px;
     padding: 40px;
     background-color: rgba(255, 192, 203, 0.521);
+    border-radius: 25px;
+   
+}
+
+.greeting {
+    font-size: large;
+    padding-top: 20px;
 }
 
 .navContainer {
@@ -30,12 +37,27 @@ button {
     background-color: rgba(168, 54, 149, 0.425);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
-    border: solid rgba(255, 255, 255, 0.637);
+    border: none;
+    outline: none;
     padding: 20px;
     border-radius: 25px;
+    width: 33%;
 
 }
 
 .menuContainer {
-    color:rgba(255, 192, 203, 0.521)
+    background-color: rgba(255, 255, 255, 0.726);
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: x-large;
+    margin-top: 20px;
+    gap: 20px;
+    height: 650px;
+    border-radius: 25px;
+    
 }

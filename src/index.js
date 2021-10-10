@@ -1,11 +1,19 @@
 import _ from 'lodash';
 import './style.css';
-import printMe from './btn.js';
+
 import carta from './menu.js';
+import horarios from './reserve.js'
+import imagen from './home.js'
 
 
 
-function header() {
+function clear() {
+    window.onload = header()
+}
+
+
+
+export default function header() {
     const page = document.getElementById('content');
     const homeBtn = document.createElement('button');
     const menuBtn = document.createElement('button');
@@ -19,6 +27,7 @@ function header() {
     page.classList.add('content');
     headContainer.classList.add('headContainer');
     navContainer.classList.add('navContainer');
+    greeting.classList.add('greeting');
 
     homeBtn.innerHTML = '🇪🇸 Home 🇪🇸';
     menuBtn.innerHTML = '🇪🇸 Menú 🇪🇸';
@@ -27,9 +36,9 @@ function header() {
     header.innerHTML = "Mel's Veggie Kitchen";
     greeting.innerHTML = "All our food is 100% Fresh with plenty of plant-based options";
 
-    homeBtn.onclick = printMe;
+    homeBtn.onclick = imagen;
     menuBtn.onclick = carta;
-    reservaBtn.onclick = printMe;
+    reservaBtn.onclick = horarios;
    
 
     headContainer.appendChild(header);
@@ -44,6 +53,7 @@ function header() {
     return page;
     
 }
+
 
 header();
 
