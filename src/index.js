@@ -1,64 +1,47 @@
 import _ from 'lodash';
 import './style.css';
+import makePage from './mp';
 
-import carta from './menu.js';
-import horarios from './reserve.js'
-import imagen from './home.js'
+import carta from './modules/menu.js';
+import horarios from './modules/reserve.js'
+import imagen from './modules/home.js'
 
 
 
-function clear() {
-    window.onload = header()
+function init() {
+    makePage()
 }
 
 
+function setListeners() {
 
-export default function header() {
-    const page = document.getElementById('content');
-    const homeBtn = document.createElement('button');
-    const menuBtn = document.createElement('button');
-    const reservaBtn = document.createElement('button');
-    const headContainer = document.createElement('div');
-    const navContainer = document.createElement('div');
-    const header = document.createElement('div');
-    const greeting = document.createElement('div');
-    
+    function clearContent() {
+        document.getElementById('textContent').innerHTML = ''
+        
+    }
 
-    page.classList.add('content');
-    headContainer.classList.add('headContainer');
-    navContainer.classList.add('navContainer');
-    greeting.classList.add('greeting');
+    const reserva = document.getElementById('reservaBtn');
+    const menu = document.getElementById('menuBtn');
+    const home = document.getElementById('homeBtn');
 
-    homeBtn.innerHTML = '🇪🇸 Home 🇪🇸';
-    menuBtn.innerHTML = '🇪🇸 Menú 🇪🇸';
-    reservaBtn.innerHTML = '🇪🇸 Reserva 🇪🇸'
+    reserva.addEventListener('click', () => {
+        clearContent()
+        horarios();
+    })
 
-    header.innerHTML = "Mel's Veggie Kitchen";
-    greeting.innerHTML = "All our food is 100% Fresh with plenty of plant-based options";
+    menu.addEventListener('click', () => {
+        clearContent();
+        carta();
+    })
 
-    homeBtn.onclick = imagen;
-    menuBtn.onclick = carta;
-    reservaBtn.onclick = horarios;
-   
+    home.addEventListener('click', () => {
+        clearContent();
+        imagen();
+    })
 
-    headContainer.appendChild(header);
-    headContainer.appendChild(greeting);
-    navContainer.appendChild(homeBtn);
-    navContainer.appendChild(menuBtn);
-    navContainer.appendChild(reservaBtn);
-
-    page.appendChild(headContainer);
-    page.appendChild(navContainer);
-
-    return page;
     
 }
 
+init();
 
-header();
-
-
-
-
-
-
+setListeners();

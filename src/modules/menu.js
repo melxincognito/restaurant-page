@@ -5,9 +5,12 @@ import Croquetas from './croquetas.png';
 import Pizza from './pizza.png'
 import Spaghetti from './icon.png'
 
+
+
+
 export default function carta() {
 
-
+    const contentBox = document.getElementById('textContent')
     const menuContainer = document.createElement('div');
     const alitas = document.createElement('div');
     const hamburgesa = document.createElement('div');
@@ -22,8 +25,8 @@ export default function carta() {
     const pizzaIcon = new Image();
     const spaghettiIcon = new Image();
 
-
     menuContainer.classList.add('menuContainer');
+
 
     alitasIcon.src = Icon;
     hamburgesaIcon.src = Foto;
@@ -31,6 +34,7 @@ export default function carta() {
     croquetasIcon.src = Croquetas;
     pizzaIcon.src = Pizza;
     spaghettiIcon.src = Spaghetti;
+    
 
     alitas.innerHTML = "Alitas: Nuestras alitas de 'pollo' hecho con yaka y canela";
     hamburgesa.innerHTML = "Hamburgesa de pollo: Hamburguesa de pollo frito con lechuga, tomate, cebolla, aguacate y nuestra salsa secreta";
@@ -40,21 +44,14 @@ export default function carta() {
     spaghetti.innerHTML = 'Spaghetti Bolagnesa: Spaghetti con nuestra salsa bolagnesa y queso parmesano';
 
 
-  
-
     menuContainer.appendChild(alitasIcon);
-
     menuContainer.appendChild(hamburgesaIcon);
-   
     menuContainer.appendChild(burritoIcon);
-   
     menuContainer.appendChild(croquetasIcon);
- 
     menuContainer.appendChild(pizzaIcon);
-    
     menuContainer.appendChild(spaghettiIcon);
 
-    document.body.appendChild(menuContainer);
+    contentBox.appendChild(menuContainer);
 
 }
 
