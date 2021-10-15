@@ -1,8 +1,28 @@
 
 
+
+function location() {
+    const locationContainer = document.createElement('div');
+
+    const address = document.createElement('h2')
+    
+    address.innerHTML = 'Carrer de America 1 Barcelona, Espana'
+
+    locationContainer.appendChild(address);
+
+    return locationContainer 
+
+
+}
+
+
+
 export default function horarios() {
 
-    const contentBox = document.getElementById('textContent')
+    var contentBox = document.getElementById('textContent')
+
+    const ubicacion = location()
+
     const horariosContainer = document.createElement('div');
     const semana = document.createElement('div');
     const semanaHorarios = document.createElement('div');
@@ -21,8 +41,11 @@ export default function horarios() {
     finde.appendChild(findeHorarios);
     horariosContainer.appendChild(semana);
     horariosContainer.appendChild(finde);
+    
 
     contentBox.appendChild(horariosContainer);
+    contentBox.appendChild(ubicacion);
+    
     
     return contentBox;
 

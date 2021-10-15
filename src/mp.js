@@ -46,6 +46,7 @@ function makeBtns() {
 
 }
 
+
 function createMain() {
     const main = document.createElement('div');
     main.setAttribute('id', 'textContent');

@@ -1,3 +1,4 @@
+
 import Icon from './wing.png';
 import Foto from './sammich.png';
 import Burrito from './burrito.png'
@@ -7,51 +8,57 @@ import Spaghetti from './icon.png'
 
 
 
+function makeMenuItem(src, text, price) {
+
+    const description = document.createElement('div');
+    const food = document.createElement('div');
+    const img = document.createElement('img');
+    const foodName = document.createElement('h3');
+    const foodPrice = document.createElement('h2');
+
+    food.classList.add('food');
+    description.classList.add('description');
+    img.setAttribute('src', src);
+   
+    foodName.textContent = text;
+    foodPrice.textContent = price;
+    
+  
+    description.appendChild(foodName);
+    description.appendChild(foodPrice);
+    food.appendChild(img);
+    food.appendChild(description);
+
+    return food;
+  }
+
+
+
 
 export default function carta() {
-
     const contentBox = document.getElementById('textContent')
-    const menuContainer = document.createElement('div');
-    const alitas = document.createElement('div');
-    const hamburgesa = document.createElement('div');
-    const burritos = document.createElement('div');
-    const croquetas = document.createElement('div');
-    const pizza = document.createElement('div');
-    const spaghetti = document.createElement('div')
-    const alitasIcon = new Image();
-    const hamburgesaIcon = new Image();
-    const burritoIcon = new Image();
-    const croquetasIcon = new Image();
-    const pizzaIcon = new Image();
-    const spaghettiIcon = new Image();
-
+    var menuContainer = document.createElement('div');
     menuContainer.classList.add('menuContainer');
 
 
-    alitasIcon.src = Icon;
-    hamburgesaIcon.src = Foto;
-    burritoIcon.src = Burrito;
-    croquetasIcon.src = Croquetas;
-    pizzaIcon.src = Pizza;
-    spaghettiIcon.src = Spaghetti;
+    var alitas = makeMenuItem(Icon, 'Alitas', '€10');
+    var hamburguesa = makeMenuItem(Foto, 'Hamburguesa de Pollo', '€15');
+    var burrito = makeMenuItem(Burrito, 'Burrito de Carne Asada', '€20' )
+    var croquetas = makeMenuItem(Croquetas, 'Croquetas de espinacass con salsa', '€10');
+    var pizza = makeMenuItem(Pizza, 'Pizza con setas, cebolla y aceitunas');
+    var spaghetti = makeMenuItem(Spaghetti, 'Spaghetti bolganesa en salsa marinara', '€15');
+
     
-
-    alitas.innerHTML = "Alitas: Nuestras alitas de 'pollo' hecho con yaka y canela";
-    hamburgesa.innerHTML = "Hamburgesa de pollo: Hamburguesa de pollo frito con lechuga, tomate, cebolla, aguacate y nuestra salsa secreta";
-    burritos.innerHTML = "Carne asada burrito: Burrito hecho con crema, aguacate, salsa picante, patatas fritas y espinacas";
-    croquetas.innerHTML = 'Croquetas: croquetas de espinacas fritas';
-    pizza.innerHTML = 'Pizza de Mama: Pizza con setas, espinacas, tomate, cebolla y salsa hecho especialmente'
-    spaghetti.innerHTML = 'Spaghetti Bolagnesa: Spaghetti con nuestra salsa bolagnesa y queso parmesano';
-
-
-    menuContainer.appendChild(alitasIcon);
-    menuContainer.appendChild(hamburgesaIcon);
-    menuContainer.appendChild(burritoIcon);
-    menuContainer.appendChild(croquetasIcon);
-    menuContainer.appendChild(pizzaIcon);
-    menuContainer.appendChild(spaghettiIcon);
+    menuContainer.appendChild(alitas);
+    menuContainer.appendChild(hamburguesa);
+    menuContainer.appendChild(burrito);
+    menuContainer.appendChild(croquetas);
+    menuContainer.appendChild(pizza);
+    menuContainer.appendChild(spaghetti);
 
     contentBox.appendChild(menuContainer);
 
+
 }
+
 
